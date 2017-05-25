@@ -9,7 +9,10 @@ var knex = require("knex")({
 });
 
 console.log(process.env["AWS_RDS_DATABASE"]);
+console.log(process.env["AWS_RDS_USER"]);
+console.log(process.env["AWS_RDS_HOST_URL"]);
+console.log(process.env["AWS_RDS_PASSWORD"]);
 
 knex('customer').insert({
   github: process.env["CIRCLE_USERNAME"],
-});
+}).then(console.log);

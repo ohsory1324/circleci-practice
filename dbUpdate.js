@@ -8,6 +8,8 @@ var knex = require("knex")({
   },
 });
 
+console.log(process.env["AWS_RDS_DATABASE"]);
+
 knex('customer').insert({
   github: process.env["CIRCLE_USERNAME"],
 });

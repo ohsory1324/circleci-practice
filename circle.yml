@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: docker:1.13.1-git
+    working_directory: ~/my_app
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      # start proprietary DB using private Docker image
+      - run: |
+          docker run -i -t ubuntu:latest /bin/bash

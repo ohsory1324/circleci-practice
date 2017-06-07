@@ -10,7 +10,7 @@ jobs:
 
       - run: |
           docker login -u $DOCKER_USER -p $DOCKER_PW
-          docker run -i -t -e CIRCLE_PR_REPONAME=$CIRCLE_PR_REPONAME CIRCLE_PR_USERNAME=$CIRCLE_PR_USERNAME codestates/c3s-circleci:0.1 /bin/bash
+          docker run -i -t -e (CIRCLE_PR_REPONAME CIRCLE_PR_USERNAME) codestates/c3s-circleci:0.1 /bin/bash
       - run:
           name: cd-to-main-folder
           command: cd

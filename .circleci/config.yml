@@ -2,18 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      - image: docker:1.13.1-git
-    working_directory: ~/my_app
+      - image: codestates/c3s-circleci:0.1
+    working_directory: ~/
     steps:
       - checkout
-      - setup_remote_docker
-
-      - run:
-          name: docker-setting
-          command: docker login -u $DOCKER_USER -p $DOCKER_PW
-      - run:
-          name: docker-run
-          command: docker run -i -t -e "CIRCLE_PR_REPONAME CIRCLE_PR_USERNAME" codestates/c3s-circleci:0.1 /bin/bash
       - run: |
           cd
           node afterPR

@@ -2,10 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: codestates/c3s-circleci:0.1
-    working_directory: ~/
+      - image: docker:1.13.1-git
+    working_directory: ~/my_app
     steps:
       - checkout
+      - setup_remote_docker
+
       - run: |
-          cd
-          node afterPR
+          docker login -u $DOCKER_USER -p $DOCKER_PW
+          docker run -it --rm codestates/c3s-dbupdate

@@ -1,8 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: docker:1.13.1-git
+    machine: true
+
+    # docker:
+    #   - image: docker:1.13.1-git
     working_directory: ~/app
     steps:
       - checkout
@@ -10,8 +12,8 @@ jobs:
           name: test
           command: npm test
 
-      - setup_remote_docker
-
-      - run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PW
-          docker run -it codestates/c3s-dbupdate
+      # - setup_remote_docker
+      #
+      # - run: |
+      #     docker login -u $DOCKER_USER -p $DOCKER_PW
+      #     docker run -it codestates/c3s-dbupdate

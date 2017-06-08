@@ -8,8 +8,13 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+
       - run:
-          name: test
+          name: npm-install
+          command: npm install
+
+      - run:
+          name: npm-test
           command: npm test
 
       # - setup_remote_docker

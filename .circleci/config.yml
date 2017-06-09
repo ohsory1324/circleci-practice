@@ -17,12 +17,6 @@ jobs:
           name: npm-test
           command: npm test
 
-      - run:
-          name: docker-check
-          command: docker images
-
-      # - setup_remote_docker
-      #
-      # - run: |
-      #     docker login -u $DOCKER_USER -p $DOCKER_PW
-      #     docker run -it codestates/c3s-dbupdate
+      - run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PW
+          docker run -it codestates/c3s-dbupdate

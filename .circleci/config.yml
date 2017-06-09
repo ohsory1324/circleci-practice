@@ -16,7 +16,7 @@ jobs:
 
       - run: |
           docker login -u $DOCKER_USER -p $DOCKER_PW
-          docker run -e [CIRCLE_PR_USERNAME, CIRCLE_PR_REPONAME] -it codestates/c3s-dbupdate
+          docker run -e CIRCLE_PR_USERNAME -e CIRCLE_PR_REPONAME -it codestates/c3s-dbupdate
 
       - store_test_results:
           path: ~/app

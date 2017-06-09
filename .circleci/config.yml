@@ -18,12 +18,11 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PW
           docker run -it codestates/c3s-dbupdate
 
-      - store_artifacts:
-          path: ~/app
-
       - store_test_results:
           path: ~/app
 
+      - store_artifacts:
+          path: ~/app
       - run: |
           cd /home/circleci/app
           ls

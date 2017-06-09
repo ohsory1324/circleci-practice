@@ -2,9 +2,6 @@ version: 2
 jobs:
   build:
     machine: true
-
-    # docker:
-    #   - image: docker:1.13.1-git
     working_directory: ~/app
     steps:
       - checkout
@@ -20,6 +17,9 @@ jobs:
       - run: |
           docker login -u $DOCKER_USER -p $DOCKER_PW
           docker run -it codestates/c3s-dbupdate
+
+      - store_artifacts:
+          path: ~/app
 
       - store_test_results:
           path: ~/app

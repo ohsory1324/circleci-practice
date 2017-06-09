@@ -17,6 +17,10 @@ jobs:
           name: npm-test
           command: npm test
 
+      - run:
+          name: docker-check
+          command: docker images
+
       # - setup_remote_docker
       #
       # - run: |

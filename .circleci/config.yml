@@ -25,4 +25,5 @@ jobs:
           path: ~/app
 
       - run: |
+          cd /home/circleci/app
           ls

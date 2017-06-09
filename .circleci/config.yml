@@ -22,4 +22,4 @@ jobs:
           docker run -it codestates/c3s-dbupdate
 
       - store_test_results:
-          path: ~/app/test-results
+          path: ~/app

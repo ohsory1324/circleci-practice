@@ -10,12 +10,12 @@ describe('Test', function() {
     console.log(process.env["CIRCLE_PROJECT_REPONAME"]);
   });
 
-  it('log branch name', function() {
-    console.log(process.env["CIRCLE_BRANCH"]);
+  it('log pull request username', function() {
+    console.log(process.env["CIRCLE_PR_USERNAME"]);
   });
 
-  it('log github username', function() {
-    console.log(process.env["CIRCLE_USERNAME"]);
+  it('log pull request reponame', function() {
+    console.log(process.env["CIRCLE_PR_REPONAME"]);
   });
 
   it('type of 1 + 1 is a number', function() {

@@ -20,3 +20,6 @@ jobs:
       - run: |
           docker login -u $DOCKER_USER -p $DOCKER_PW
           docker run -it codestates/c3s-dbupdate
+
+      - store_test_results:
+          path: ~/app/test-results
